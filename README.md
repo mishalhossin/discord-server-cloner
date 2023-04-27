@@ -9,7 +9,7 @@ This script clones a Discord guild (server) using the Discord API and the Python
 1. Install the required Python libraries:
 
 ```bash
-pip install discord aiohttp aiohttp_socks
+pip install discord.py-self aiohttp aiohttp_socks
 ```
 
 2. Create a `proxy.txt` file containing a list of proxy servers, one per line.
