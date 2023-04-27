@@ -2,7 +2,7 @@
 
 My own script to clone servers (not skided fuck you)
 
-This script clones a Discord guild (server) using the Discord API and the Python `discord` library.
+This script clones a Discord guild (server) using the Discord API and the Python `discord.py-self` library.
 
 ## Installation
 
