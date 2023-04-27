@@ -7,6 +7,7 @@ from aiohttp_socks import ProxyConnector
 
 TOKEN = ''
 
+
 bot = commands.Bot(command_prefix='!')
 
 async def get_random_proxy():
