@@ -7,7 +7,6 @@ from aiohttp_socks import ProxyConnector
 
 TOKEN = ''
 
-
 bot = commands.Bot(command_prefix='!')
 
 async def get_random_proxy():
@@ -39,9 +38,17 @@ async def clone_guild(from_guild_id, to_guild_id):
     for channel in from_guild.channels:
         cat = categories.get(channel.category_id)
         await to_guild.create_text_channel(channel.name, category=cat)
+        await asyncio.sleep(0.4)
 
     for role in from_guild.roles:
-        await to_guild.create_role(name=role.name)
+        await to_guild.create_role(
+            name=role.name,
+            permissions=role.permissions,
+            colour=role.color,
+            hoist=role.hoist,
+            mentionable=role.mentionable
+        )
+        await asyncio.sleep(0.4)
 
 @bot.event
 async def on_ready():
