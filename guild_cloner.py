@@ -32,13 +32,20 @@ async def clone_guild(from_guild_id, to_guild_id):
 
     categories = {}
     for cat in from_guild.categories:
-        new_cat = await to_guild.create_category(cat.name)
+        new_cat = await to_guild.create_category(cat.name, overwrites=cat.overwrites)
         categories[cat.id] = new_cat
 
     for channel in from_guild.channels:
         cat = categories.get(channel.category_id)
-        await to_guild.create_text_channel(channel.name, category=cat)
-        await asyncio.sleep(0.4)
+
+        if isinstance(channel, discord.TextChannel):
+            new_channel = await to_guild.create_text_channel(channel.name, category=cat, overwrites=channel.overwrites)
+        elif isinstance(channel, discord.VoiceChannel):
+            new_channel = await to_guild.create_voice_channel(channel.name, category=cat, overwrites=channel.overwrites)
+        else:
+            continue
+
+        await asyncio.sleep(0.3)
 
     for role in from_guild.roles:
         await to_guild.create_role(
@@ -48,7 +55,7 @@ async def clone_guild(from_guild_id, to_guild_id):
             hoist=role.hoist,
             mentionable=role.mentionable
         )
-        await asyncio.sleep(0.4)
+        await asyncio.sleep(0.3)
 
 @bot.event
 async def on_ready():
