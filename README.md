@@ -6,7 +6,7 @@ Using selfbots can lead to your account being banned or even legal action being 
 
 It is important to remember that Discord's Terms of Service are in place to ensure the safety and fairness of the platform for all users. By using selfbots, you not only put yourself at risk but also potentially harm other users and disrupt the community.
 
-For more information about Discord's policies on selfbots, please refer to this article on their website: (Automated user accounts self bots)[https://support.discord.com/hc/en-us/articles/115002192352-Automated-user-accounts-self-bots-]
+For more information about Discord's policies on selfbots, please refer to this article on their website: (Automated user accounts self bots) [https://support.discord.com/hc/en-us/articles/115002192352-Automated-user-accounts-self-bots-]
 
 ## Discord Server Cloner
 
